@@ -18,6 +18,11 @@ public class LabUno{
 	static int[] selectOne;
 	static int[] selectTwo;
 
+/*
+initializes the static variables.
+@params empty.
+*/
+
 	public static void initialize(){
      in = new Scanner(System.in);
      exit = false;
@@ -28,7 +33,12 @@ public class LabUno{
      numberA = 0;
      numberB = 0;
 	}
-    
+
+/*
+prints the principal menu and reads the option selected, and then calls the especific methods asociated whith each option.
+pre: call initialize() method.
+@params empty.
+*/
     public static void menuAndOption(){
      System.out.println("\n");
 	 System.out.println("*************************");
@@ -82,7 +92,12 @@ public class LabUno{
       }
 
      }
-//**************************************OPTION ONE : READ 3 CHAINS and do: length, concatenate, char******************************
+
+/*
+reads three chains of characters
+pre: <option> = 1
+@params empty.
+*/
      public static void readChains(){
      	System.out.println("Ingresar tres cadenas de caracteres");
         chainOne=in.nextLine();
@@ -90,15 +105,25 @@ public class LabUno{
         chainTree=in.nextLine();
      }
 
+/*
+shows the options derivated of the option one in principal menu, and read the selected option.
+pre: <option> = 1
+@params empty.
+*/
     public static void menuOptionChains(){
      System.out.println("\n"+
      	                "\n1.Ver longitud de cadenas."+ 
      	                "\n2.Concatenar cadenas."+
-     	                "\n3.Mostrar el termino n-esimo de las cadenas"+
+     	                "\n3.Mostrar el termino n de las cadenas"+
      	                "\n0. volver");
 	 option = in.nextInt();
     }
 
+/*
+calls the asosiated method with the option of the menu.
+pre: <option> != null
+@params empty.
+*/
     public static void optionOfChains(){
     	switch(option){
          case 0:
@@ -120,17 +145,30 @@ public class LabUno{
     	System.out.println(" ");
     }
 
+/*
+shows the options derivated of the option one in principal menu, and read the selected option.
+pre: <option> = 1
+@params empty.
+*/
     public static void OptionChainsSeeLength(){
     	System.out.println("La cadena : *"+chainOne+"* tiene: "+chainOne.length()+" caracteres.");
 		System.out.println("La cadena : *"+chainTwo+"* tiene: "+chainTwo.length()+" caracteres.");
 		System.out.println("La cadena : *"+chainTree+"* tiene: "+chainTree.length()+" caracteres.");
     }
 
+/*
+concatenate the previously read chains, and then show them
+@params empty.
+*/
     public static void OptionChainsConcatenate(){
  		String chains = (chainOne+" "+chainTwo+" "+chainTree);
         System.out.println("Las cadenas concatenadas son: "+chains);
     }
 
+/*
+reads the position of the char to find, then prints the char at that position.
+@params empty.
+*/
     public static void OptionChainsFindChar(){
  		System.out.println("Ingresar la posicion del caracter a ubicar: ");
 		int charPosition=in.nextInt();
@@ -152,13 +190,22 @@ public class LabUno{
 
     }
 
-//**********************************OPTION TWO : READ 2 REAL NUMBERS and do: divition, integer part division**********************
+/*
+reads two real numbers.
+pre: <option> = 2
+@param empty.
+*/
     public  static void readRealNumbers(){
      System.out.println("Ingresar dos numeros reales mayores a 0:");
      numberA = in.nextDouble(); in.nextLine();
      numberB = in.nextDouble(); in.nextLine();
     }
-    
+
+/*
+shows the options contained in the option 2 in the principal menu, and reads the option selected.
+pre: <option> = 2
+@param empty.
+*/
     public static void menuOptionNumerReal(){
      System.out.println("\n"+
      	                "\n1.Division de ambos numeros."+ 
@@ -167,6 +214,11 @@ public class LabUno{
 	 option = in.nextInt();
     }
 
+/*
+calls the asosiated method with the option of the previous menu.
+pre: <option> != null 
+@param empty.
+*/
     public static void optionNumberReal(){
     	switch(option){
          case 0:
@@ -187,17 +239,34 @@ public class LabUno{
     	}
     }	
 
+/*
+shows the division of two numbers.
+pre: <numberA> != null 
+     <numberC> != null 
+     <numberB> != null 
+@param empty.
+*/
     public static void NumbersDivision(){
      System.out.println("la division de "+numberA+"/"+numberB+" es igual a: "+numberA/numberB);
 	 System.out.println("la division de "+numberB+"/"+numberA+" es igual a: "+numberB/numberA);      
     } 
-
+/*
+shows the division of the integer part of each number, and the residue of the division
+pre: <numberA> != null 
+     <numberC> != null 
+     <numberB> != null      
+@param empty.
+*/
     public static void integerPartOfNumbersDivision(){
      System.out.println("la division de "+(int)numberA+"/"+(int)numberB+" es igual a: "+(int)(numberA/numberB)+" y tienen un residuo igual a: "+(int)(numberA%numberB));
 	 System.out.println("la division de "+(int)numberB+"/"+(int)numberA+" es igual a: "+(int)(numberB/numberA)+" y tienen un residuo igual a: "+(int)(numberB%numberA));
     }
 
-//**************************************OPTION TREE : READ 3 ARRAYS *************************************************************
+/*
+reads a length, and fills tree arrays with given numbers
+pre: <option> = 3  
+@param empty.
+*/
     public static void readArrays(){
      System.out.println("Ingesar la longitud de los Arreglos");
      int arraysLength = in.nextInt();
@@ -221,6 +290,10 @@ public class LabUno{
     	 }     
     }
 
+/*
+show a menu and reads an option.
+@param empty.
+*/
     public static void menuArrays(){
      System.out.println("\n"+
      	                "\n1.Ver Arreglos."+ 
@@ -234,6 +307,12 @@ public class LabUno{
 	 option = in.nextInt();
     }
 
+
+/*
+calls the asosiated method with the option of the previous menu.
+pre: <option> != null 
+@param empty.
+*/
     public static void optionArrays(){
      switch(option){
          case 0:
@@ -281,6 +360,13 @@ public class LabUno{
     	} 
     }
 
+/*
+prints the arrays arrayOne, arrayTwo and arrayTree
+pre: <arrayOne> != null 
+     <arrayTwo> != null 
+     <arrayTree> != null 
+@param empty.
+*/
     public static void seeArrays(){
       System.out.println("El arreglo numero uno es: ");
      for(int i = 0; i < arrayOne.length ; i++){
@@ -297,6 +383,10 @@ public class LabUno{
 
     }
 
+/*
+ask for a selection of one of the arrays
+@param empty.
+*/
      public static void selectOneArray(){
      	do{
       		System.out.println("Escoger el arreglo a para calcular"+
@@ -315,6 +405,11 @@ public class LabUno{
 
      }
 
+/*
+shows the  average value of an array by calling the calculateAverage method.
+pre: <option> != null 
+@param empty.
+*/
     public static void  averageValue(){
      switch(option){
       case 1:
@@ -336,6 +431,11 @@ public class LabUno{
 
     }
 
+/*
+calculates the average value in an array
+pre: array != null;
+@param int[] array. any array of integers
+*/
      public static int calculateAverage(int[]array){
       int average = 0;
        for (int i=0 ; i<array.length ; i++ ) {
@@ -344,7 +444,11 @@ public class LabUno{
       return average;
      }
 
-
+/*
+shows the  average value of an array by calling the calculateMaxValue method.
+pre: <option> != null 
+@param empty.
+*/
     public static void maxValue(){
      switch(option){
       case 1:
@@ -366,7 +470,11 @@ public class LabUno{
 
     }
 
-
+/*
+calculates the max value in an array
+pre: array != null;
+@param int[] array. any array of integers
+*/
     public static int calculateMaxValue(int[]array){
      int max = Integer.MIN_VALUE;
      int cont = 0;
@@ -385,6 +493,10 @@ public class LabUno{
      return max;
     }
 
+/*
+ask for a selection of the operations that can be done
+@param empty.
+*/
     public static void selectOperation(){
 	     System.out.println("Escoger la operacion a realizar"+
 	     	                "\n1.Suma"+
@@ -393,7 +505,11 @@ public class LabUno{
 	      option = in.nextInt();
      }
 
-
+/*
+calls the asosiated method with the option of the previous menu.
+pre: <option> != null 
+@param empty.
+*/
      public static void OptionOperation(){
      	switch(option){
        	case 1:
@@ -410,7 +526,10 @@ public class LabUno{
        		break;
        }
       }
-
+/*
+reads the selection of two of the tree previous arrays, and creates two new identical arrays to operate with
+@param empty.
+*/
       public static void selectTwoArrays(){
       	do{
          System.out.println("Escoger los arreglos a para calcular. (separar cada numero con un enter)"+
@@ -469,6 +588,12 @@ public class LabUno{
 
     }
 
+/*
+calculates and shows a new array biuld with the addition of the two previous selected arrays
+pre: <selectOne> != null
+     <selectTwo> != null 
+@param int[] selectOne,int[] selectTwo. any two arrays of integers
+*/
     public static void optionAddition(int[] selectOne,int[] selectTwo){
     	System.out.println("La suma de los Arreglos es igual a:");
     	System.out.print("[");
@@ -484,6 +609,12 @@ public class LabUno{
     	System.out.print("]");
     }
 
+/*
+calculates and shows a new array biuld with the substraction of the two previous selected arrays
+pre: <selectOne> != null
+     <selectTwo> != null 
+@param int[] selectOne,int[] selectTwo. any two arrays of integers
+*/
     public static void optionSubstraction(int[] selectOne,int[] selectTwo){
     	System.out.println("La resta de los arreglos de la forma a/b es igual a:");
     	System.out.print("[");
@@ -511,10 +642,12 @@ public class LabUno{
 
     }
 
-    public static void showSubstraction(int[] selectOne,int[] selectTwo) {
-    	
-    }
-
+/*
+calculates and shows a new array biuld with the multiplication of the two previous selected arrays
+pre: <selectOne> != null
+     <selectTwo> != null 
+@param int[] selectOne,int[] selectTwo. any two arrays of integers
+*/
     public static void optionMultiplication(int[] selectOne,int[] selectTwo) {
     	System.out.println("La Multiplicacion de los Arreglos es igual a:");
     	System.out.print("[");
@@ -531,6 +664,10 @@ public class LabUno{
 
     }
 
+/*
+shows the  concatenation of the tree arrays previously selected
+@param empty.
+*/
     public static void showConcatenatedArrays() {
     	int [] treeArrays = new int[arrayOne.length*3];
     	concatenateArrays(treeArrays);
@@ -546,6 +683,12 @@ public class LabUno{
     	System.out.print("]");
     }
 
+/*
+fills an array tree times the size of the original arrays to put the tree arrays inside this array
+pre: <treeArrays> != null
+@param int[] treeArrays, any two arrays of integers
+*/
+
     public static void concatenateArrays(int [] treeArrays) {
 
     	for (int i =0; i< treeArrays.length ; i++ ) {
@@ -553,6 +696,11 @@ public class LabUno{
     	}
     }
 
+/*
+gets the individual value of each position in the tree arrays and gives it a position in the new array
+pre: <i> >= 0
+@param int i. any integer above -1
+*/
     public static int getValueOfArrays(int i) {
     	int value;
     	if (i < arrayOne.length) {
@@ -566,6 +714,10 @@ public class LabUno{
     	return value;
     }
 
+/*
+ask for a the number of times the array is going to turn, and treads that value and returns it 
+@param empty.
+*/
     public static int askForTheNTurn() {
     	System.out.println("Digitar la cantidad de veces que desea girar el arreglo seleccionado:\n"+
     						"(numeros enteros positivos para desplazar el arreglo hacia la derecha)\n"+
@@ -575,6 +727,11 @@ public class LabUno{
     	 return nth;
     }
 
+/*
+calls the asosiated method with the option of the previous menu.
+pre: <option> != null 
+@param empty.
+*/
     public static void turnArray() {
     	switch (option) {
     		case 1:
@@ -590,6 +747,11 @@ public class LabUno{
     	}
     }
 
+/*
+show the array thats given
+pre: <arrayToShow> != null
+@param int[] arrayToShow, any array
+*/
     public static void showArray(int [] arrayToShow) {
     	System.out.print("[");
     	for ( int i = 0 ; i<arrayToShow.length; i++ ) {
@@ -604,6 +766,12 @@ public class LabUno{
 
     }
 
+/*
+turns the array given n times and then return that array
+pre: <arrayTurned> != null
+     <n> != 0
+@param int[] treeArrays, int n 
+*/
     public static int[] operationTurnArrays(int [] arrayTurned, int n) {
     	int temp = 0;
     	for (int i = 0; i < Math.abs(n) ; i++ ) {
@@ -627,6 +795,11 @@ public class LabUno{
 
     }
 
+/*
+calls the asosiated method with the option of the previous menu.
+pre: <option> != null 
+@param empty.
+*/
     public static void sorting() {
     	switch (option) {
     		case 1:
@@ -641,6 +814,11 @@ public class LabUno{
     	}
     }
 
+/*
+sorts a given array with the bouble method
+pre: <arrayToSort> != null 
+@param int[] arrayToSort. any integer array
+*/
     public static int[] boubleSort(int[] arrayToSort) {
     	for (int i = arrayToSort.length; i>0 ;i-- ) {
     		for (int j  = 0; j< i-1 ; j++ ) {
@@ -655,6 +833,10 @@ public class LabUno{
     	return (arrayToSort);
     }
 
+/*
+calls the two main metods that iclude the rest of the methods 
+@param String args[].
+*/
 	public static void main(String args[]){
 	     do{
 		     initialize();
